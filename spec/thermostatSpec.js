@@ -37,4 +37,19 @@ describe('Thermostat', function () {
     thermostat.powerSaveOn();
     expect(thermostat.powerSave).toEqual(true);
   });
+  it('resets temperature back to 20', function(){
+    thermostat.up(3);
+    thermostat.reset();
+    expect(thermostat.temperature).toEqual(20);
+  });
+  it('returns low usage if temperature < 18', function(){
+    thermostat.down(3);
+    thermostat.usageState();
+    expect(thermostat.usage).toEqual('low-usage');
+  });
+  it('returns high usage if temperature > 24', function(){
+    thermostat.up(5);
+    thermostat.usageState();
+    expect(thermostat.usage).toEqual('high-usage');
+  });
 });
