@@ -14,6 +14,7 @@ class Thermostat {
 
   powerSaveOn() {
     this.powerSave = true;
+    this.state();
     if(this.temperature > this.max){
       this.temperature = this.max;
     }
