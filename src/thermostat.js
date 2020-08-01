@@ -14,13 +14,13 @@ class Thermostat {
 
   powerSaveOn() {
     this.powerSave = true;
-    this.state();
-    if(this.temperature > this.max){
+    this.stateUpdate();
+    if (this.temperature > this.max) {
       this.temperature = this.max;
     }
   }
 
-  state() {
+  stateUpdate() {
     if (this.powerSave == false) {
       this.max = 32;
     } else {
@@ -28,18 +28,18 @@ class Thermostat {
     }
   }
 
-  usageState(){
-    if(this.temperature < 18){
+  usageState() {
+    if (this.temperature < 18) {
       this.usage = 'low-usage';
-    }else if(this.temperature > 24){
+    } else if (this.temperature > 24) {
       this.usage = 'high-usage';
-    }else{
+    } else {
       this.usage = 'medium-usage';
     }
   }
 
   up(change) {
-    this.state();
+    this.stateUpdate();
     this.temperature += change;
     if (this.temperature > this.max) {
       this.temperature = this.max;
@@ -57,9 +57,9 @@ class Thermostat {
     console.log(`The temperature was changed by ${change} degrees.`);
   }
 
-  reset(){
+  reset() {
     this.temperature = 20;
   }
 
-  
+
 }
