@@ -4,5 +4,7 @@ Pair programming project to implement a thermostat written in Javascript. This w
 
 ---
 
-• Testing with Jasmine
-• Drag and drop HTML to browser from local directory to use.
+• Testing with Jasmine  
+• Drag and drop HTML to browser from local directory to use.  
+
+:)
